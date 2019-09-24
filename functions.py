@@ -17,18 +17,18 @@
 
 
 
-def pass_a_list(list_of_args):      #PASSING A LIST AS ARGUMENT
-    for x in list_of_args:
-        print(x)
+# def pass_a_list(list_of_args):      #PASSING A LIST AS ARGUMENT
+#     for x in list_of_args:
+#         print(x)
+#
+# mylist = ["Esma", "Tugba", "Fatma"]
+# pass_a_list(mylist)
+
+
+
+
 
 mylist = ["Esma", "Tugba", "Fatma"]
-pass_a_list(mylist)
-
-
-
-
-
-
 def pass_unknown_num_of_args(*arg_list):        #PASSING UNKNOWN NUMBER OF ARGUMENTS
     for x in arg_list:
         print(x)
@@ -36,16 +36,17 @@ def pass_unknown_num_of_args(*arg_list):        #PASSING UNKNOWN NUMBER OF ARGUM
 
 pass_unknown_num_of_args("Glenn", "Arnold", "Ashley", "Greg", "Linda") #Will pass as multiple arguments
 pass_unknown_num_of_args(mylist)    #will pass as a single argument, the function will print ['Esma', 'Tugba', 'Fatma']. Instead should call like this: pass_unknown_num_of_args("Esma", "Tugba", "Fatma")
-pass_unknown_num_of_args("Esma", "Tugba", "Fatma")
+pass_unknown_num_of_args(*mylist)    #will pass as an argument list, the function will print 'Esma', 'Tugba', 'Fatma'.
 
 
-def tri_recursion(k):
-  if(k>0):
-    result = k+tri_recursion(k-1)
-    print(result)
-  else:
-    result = 0
-  return result
 
-print("\n\nRecursion Example Results")
-tri_recursion(6)
+# def tri_recursion(k):
+#   if(k>0):
+#     result = k+tri_recursion(k-1)
+#     print(result)
+#   else:
+#     result = 0
+#   return result
+#
+# print("\n\nRecursion Example Results")
+# tri_recursion(6)
