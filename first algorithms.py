@@ -8,7 +8,7 @@ def get_min_from_array(int_array):  # we are gonna find the min item of a given 
         if x < minimum:
             minimum = x
 
-    print(f"Min number in the list is: {min}")
+    print(f"Min number in the list is: {minimum}")
 
 
 def get_min2_from_array(int_array):  # we are gonna find the second min number in a given list
