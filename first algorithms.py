@@ -2,11 +2,11 @@ import sys
 
 
 def get_min_from_array(int_array):  # we are gonna find the min item of a given list
-    min = sys.maxsize
+    minimum = sys.maxsize
 
     for x in int_array:
-        if x < min:
-            min = x
+        if x < minimum:
+            minimum = x
 
     print(f"Min number in the list is: {min}")
 
