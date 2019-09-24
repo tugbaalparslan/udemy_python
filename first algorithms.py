@@ -1,7 +1,7 @@
 import sys
 
 
-def get_min_from_array(int_array):  # we are gonna find the min item of a given list
+def get_min_from_array(*int_array):  # we are gonna find the min item of a given argument list, will use *args
     minimum = sys.maxsize
 
     for x in int_array:
@@ -25,5 +25,8 @@ def get_min2_from_array(int_array):  # we are gonna find the second min number i
 
 
 num_array = [15, 8, 98, 23, 7, 1, 67, 90, 56, 3, 88, 101, -3]
-get_min_from_array(num_array)
+
+get_min_from_array(15, 8, 98, 23, 7, 1, 67, 90, 56, 3, 88, 101, -3)   #calling the function with list
+get_min_from_array(*num_array)       #calling the function with args
+
 get_min2_from_array(num_array)
