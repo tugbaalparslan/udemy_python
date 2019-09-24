@@ -24,6 +24,6 @@ def get_min2_from_array(int_array):  # we are gonna find the second min number i
     print(f"Min number in the list is: {min1}, Second min number in the list is: {min2}")
 
 
-num_array = [15, 8, 98, 23, 7, 1, 67, 90, 56, 3, 88, 101]
+num_array = [15, 8, 98, 23, 7, 1, 67, 90, 56, 3, 88, 101, -3]
 get_min_from_array(num_array)
 get_min2_from_array(num_array)
