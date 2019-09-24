@@ -39,7 +39,6 @@ pass_unknown_num_of_args(mylist)    #will pass as a single argument, the functio
 pass_unknown_num_of_args(*mylist)    #will pass as an argument list, the function will print 'Esma', 'Tugba', 'Fatma'.
 
 
-
 # def tri_recursion(k):
 #   if(k>0):
 #     result = k+tri_recursion(k-1)
