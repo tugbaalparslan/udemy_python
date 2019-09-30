@@ -84,4 +84,3 @@ while usr_input != 'q':
         print(f'So far you have visited these countries: {countries_visited} ')
 
 print('Program quited per your request!')
-
