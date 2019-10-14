@@ -42,27 +42,40 @@ def organized(a, b):
     # Driver Code
 
 
-n1 = int(input("Enter lower range :-\n"))
-n2 = int(input("Enter upper range :-\n"))
-
-print("------Before Using Formatters-------")
-
-# Calling function without formatters
-unorganized(n1, n2)
-
-print()
-print("-------After Using Formatters---------")
-print()
+# n1 = int(input("Enter lower range :-\n"))
+# n2 = int(input("Enter upper range :-\n"))
+#
+# print("------Before Using Formatters-------")
+#
+# # Calling function without formatters
+# #unorganized(n1, n2)
+#
+# print()
+# print("-------After Using Formatters---------")
+# print()
 
 # Calling function that contain
 # formatters to organize the data
-organized(n1, n2)
+#organized(n1, n2)
 
 print('*********************')
 
 x = str(2)
 y = 'sandwiches'
 print(x + ' ' + y)
+
+
+
+x = 20
+y = 30
+x,y = y,x
+print(x,y)
+
+
+
+
+
+
 
 
 

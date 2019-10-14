@@ -84,11 +84,29 @@ def reverse_the_list(my_arr):
         beg_pos += 1
         loop_x -= 1
 
-    print("reverse list:", my_arr)
+    print("reversed list is:", my_arr)
+
+
+
+def shift_arr_n_times(my_list, n):
+    while n > 0:
+        last = my_list[len(my_list)-1]
+
+        for i in range(len(my_list)-2, -1, -1):
+            my_list[i+1] = my_list[i]
+        my_list[0] = last
+        n -= 1
+
+    print('shifted list is:', my_list)
+
+
 
 
 my_list = [0, 2, 0, 8, 1, 3, 0, 0, 5, 4, 9]
 reverse_the_list(my_list)
+
+my_list = [0, 2, 5, 8]
+shift_arr_n_times(my_list,2)
 
 
 
