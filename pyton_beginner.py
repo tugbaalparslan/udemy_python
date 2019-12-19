@@ -33,10 +33,11 @@ family.insert(3, 'Ahmet Salih') #inserts object to the given index, only one ite
 # family.append('Ahmet Salih') #appends only one item to the list , list reorders automatically
 family.append('Hamza')
 family.append('Nesrin')
-print(family)
-print(family.__len__())
+print(family.__len__(), family)
 family.remove('Ahmet Salih')  #removes only one item from the list, list reorders automatically
-print(family[3])
+print(family)
+family.pop()
+print("After pop() function: ", family)
 
 # LISTS INSIDE LISTS EXAMPLE *************************************
 #  friends = [['Ayse', 29], ['Aysenur', 31], ['Aysegul', 17]]

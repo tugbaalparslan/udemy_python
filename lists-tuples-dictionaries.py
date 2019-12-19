@@ -19,7 +19,7 @@
 # print(f'Isim translates to {dictionary_1["isim"]}') #formatted string, key must be put in double quotes if the print quote is single quote.
 #
 #
-thisdict =	{
+thisdict = {
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964
@@ -57,44 +57,50 @@ print(txt.format(age, year))
 
 this_tuple = ('apple', 'kiwi', 'banana')
 this_string = 'apple'
-this_single_item_tuple = ('apple',) #IMPORTANT! if you don't put a comma to the end of a single tuple, then this will be interpreted as string!
+this_single_item_tuple = ('apple',)  # put a comma to the end of a single tuple,otherwise it is interpreted as a string!
+
 this_list = ['apple', 'banana']
 this_dictionary = {'name': 'tugba', 'last_name': 'alparslan'}
-print(this_tuple, type(this_tuple), type(this_single_item_tuple),
+print("Here we go!: ", this_tuple, type(this_tuple), type(this_single_item_tuple),
       type(this_string), type(this_list), type(this_dictionary))
 
 print('\n\n')
 
+# tuples allow duplicate members. They are indexed, ordered, and immutable (cannot be changed after it's created)
 tuple1 = ("a", "b", "c")
 tuple2 = (1, 2, 3)
 
 tuple3 = tuple1 + tuple2
-print(type(tuple3[1]), type(tuple3[3]))
-print(type(tuple3))
+print("type of tuple3's second ({}) and forth ({}) item: ".format(tuple3[1], tuple3[3]), type(tuple3[1]), type(tuple3[3]))
+print("type of tuple3:", type(tuple3))
 print('\n\n')
 
 
-thisset = {'kiwi', 'apple', 'kiwi'}
+# duplicate members are not allowed in a set, duplicates are discarded. therefore, len of set below is 2.
+# sets are un-indexed and unordered.
+this_set = {'kiwi', 'apple', 'kiwi'}
 
-for x in thisset:
-  print(x, '**')
+for x in this_set:
+    print('item:', x, 'len of this tuple', this_set.__len__())
 
-
-
-thisdict =	{
+this_dict = {
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964
 }
 
-print(thisdict)
+print(this_dict)
+# UPDATE values of a given dictionary
+change_model = {"model": "Mustang V", "year": 1965}
+# We could have done this by simply assigning new values: this_dict["model"] = "Mustang V"
+this_dict.update(change_model)
 
-
+print("Updated dictionary is:", this_dict)
 
 print("Converting python range() to list")
-even_list = list(range(2,10,2))
+even_list = list(range(2, 11, 2))
 print("printing the even list", even_list)
-odd_list = list(range(1,10,2))
+odd_list = list(range(1, 10, 2))
 print("Printing the odd list:", odd_list)
 
 

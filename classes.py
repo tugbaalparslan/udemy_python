@@ -1,3 +1,20 @@
+class Employee:
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + '.' + last + '@loverdure.com'
+
+    def printfullname(self):
+        print(self.first + ' ' + self.last)
+
+
+emp1 = Employee('Tugba', 'Alparslan', 7000)
+
+Employee.printfullname(emp1)
+emp1.printfullname()
+
+
 class Customer:
     def __init__(self, name, age):
         self.name = name

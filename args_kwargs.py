@@ -43,3 +43,18 @@ arguments_here(*my_args)
 my_kwargs = {"arg1": "I", "arg2": "LOVE", "arg3": "PYTHON"}
 arguments_here(**my_kwargs)
 
+
+
+my_list = ["Ray", "Eva", "Rose"]
+
+
+def pass_unknown_num_of_args(*arg_list):  # PASSING UNKNOWN NUMBER OF ARGUMENTS
+    for x in arg_list:
+        print(x)
+
+
+pass_unknown_num_of_args("Glenn", "Arnold", "Ashley", "Greg", "Linda")  # Will pass as multiple arguments
+print("After passing as a single argument list: (my_list)")
+pass_unknown_num_of_args(my_list)  # Will pass as a single argument, the function will only print ["Ray", "Eva", "Rose"]
+print("After passing as multiple argument list: (*my_list)")
+pass_unknown_num_of_args(*my_list)    # will pass as an argument list, the function will print "Ray", "Eva", "Rose"
