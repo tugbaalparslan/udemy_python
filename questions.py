@@ -7,7 +7,10 @@ def first_two_sum(my_list, sumsum):  # returns the first two_sum index pair
         for counter2 in range(counter1 + 1, len(my_list)):
             if my_list[counter1] + my_list[counter2] == sumsum:
                 return counter1, counter2
-        print(counter2)
+
+
+my_list = [-1, 2, 0, -8, -4, -9, 1, 3, 0, 0, 5, 4, 19, 12, 15, 18, 19]
+print("first two sum index pair is:", first_two_sum(my_list, 7))
 
 
 def tuple_list_two_sum(mylist, sumsum):  # returns all index pair of two sums as tuple list
@@ -18,6 +21,9 @@ def tuple_list_two_sum(mylist, sumsum):  # returns all index pair of two sums as
                 tuple_two_sum_indexes.append((counter1, counter2))
 
     return tuple_two_sum_indexes
+
+
+print("all index pairs of two sums is:", tuple_list_two_sum(my_list, 7))
 
 
 def smart_two_sum(mylist, sumsum):  # returns all index pair of two sums as tuple list
@@ -34,10 +40,11 @@ def smart_two_sum(mylist, sumsum):  # returns all index pair of two sums as tupl
     return two_sum_tuple_list
 
 
+print("smart two sum tuple list:", smart_two_sum(my_list, 7))
+
+
 # removes all occurrences of a given number in a given list
 # without using the remove function or creating a new list
-
-
 def remove_num_occurrences_from_list(arr, num_to_remove):
     loc_index = 0
     for cur_item in arr:
@@ -47,6 +54,10 @@ def remove_num_occurrences_from_list(arr, num_to_remove):
 
     del arr[loc_index:]
     print("In function:", sys._getframe(  ).f_code.co_name,":", arr)
+
+
+my_list = [0, 1, 2, 3, 0, 4, 0]
+remove_num_occurrences_from_list(my_list, 0)
 
 
 def replace_with_the_greatest_next(arr):
@@ -61,21 +72,24 @@ def replace_with_the_greatest_next(arr):
     print(arr)
 
 
+my_list = [0, 1, 8, 3, 4]
+replace_with_the_greatest_next(my_list)
+
+
 def reverse_the_list(my_arr):
     end_pos = len(my_arr) - 1
     beg_pos = 0
-    loop_x = int(len(my_arr)/2)
 
-    while loop_x > 0:
-        temp_x = my_arr[end_pos]
-        my_arr[end_pos] = my_arr[beg_pos]
-        my_arr[beg_pos] = temp_x
+    while beg_pos < end_pos:
+        my_arr[end_pos], my_arr[beg_pos] = my_arr[beg_pos], my_arr[end_pos]
         end_pos -= 1
         beg_pos += 1
-        loop_x -= 1
 
     print("reversed list is:", my_arr)
 
+
+my_list = [0, 1, 2, 3, 4]
+reverse_the_list(my_list)  # after this function, changes made in the function affects my_list in the main body
 
 
 def shift_arr_n_times(my_list, n):     # tis code needs optimization, time out for huge arrays
@@ -94,16 +108,24 @@ def shift_arr_n_times(my_list, n):     # tis code needs optimization, time out f
     print('shifted list is:', my_list)
 
 
+my_list = [0, 2, 5, 8, -1, 2]
+shift_arr_n_times(my_list, 2)
+
+
 def count_num_of_occurrences(my_arr):  # Counts each number's occurrences in a given list
     my_dict = {}
 
     for x in my_arr:
-        if str(x) in my_dict.keys():
-            my_dict[str(x)] += 1
+        if x in my_dict.keys():
+            my_dict[x] += 1
         else:
-            my_dict[str(x)] = 1
+            my_dict[x] = 1
 
     print("Counted nums:", my_dict)
+
+
+my_list = [0, 2, 0, 8, 1, -3, 0, 0, 5, 4, -11]
+count_num_of_occurrences(my_list)
 
 
 def find_min_and_max_of_list(my_arr):  # Finds min and max items of a given list using brute force
@@ -116,6 +138,10 @@ def find_min_and_max_of_list(my_arr):  # Finds min and max items of a given list
         if x > max_num:
             max_num = x
     print(f"min: {min_num}, max:{max_num}")
+
+
+my_list = [-1, 2, 0, -8, -9, 1, 3, 0, 0, 5, 4, 19, 12, 15, 18, 19]
+find_min_and_max_of_list(my_list)
 
 
 def find_min_and_max_of_list_least_comparing(my_arr):   # Finds min and max items of a given list using least comparing
@@ -144,6 +170,10 @@ def find_min_and_max_of_list_least_comparing(my_arr):   # Finds min and max item
     print("max val: {} min val: {}".format(max_val, min_val))
 
 
+my_list = [-1, 2, 0, -8, -9, 1, 3, 0, 0, 5, 4, 19, 12, 15, 18, 19]
+find_min_and_max_of_list_least_comparing(my_list)
+
+
 def find_min1_min2(my_arr):  # Finds the first and second min values in a given list
     min1 = min2 = sys.maxsize
 
@@ -156,25 +186,12 @@ def find_min1_min2(my_arr):  # Finds the first and second min values in a given 
     print("Min1: {} and Min2: {}".format(min1, min2))
 
 
-def find_the_num_by_slicing_the_sorted_list_half(my_arr, num):
-    low = 0
-    high = len(my_arr)-1
-
-    while low <= high:
-        mid = (low + high) // 2
-
-        if num == my_arr[mid]:
-            return mid
-        elif num > my_arr[mid]:
-            low = mid + 1
-        else:
-            high = mid - 1
-
-    return -1
+my_list = [-1, 2, 0, -8, -9, 1, 3, 0, 0, 5, 4, 19, 12, 15, 18, 19]
+find_min1_min2(my_list)
 
 
 # my_arr is a sorted list
-def find_the_first_element_larger_than_x(my_arr, num):
+def find_the_next_greater_element_in_a_sorted_list(my_arr, num):
     low = 0
     high = len(my_arr) - 1
     first_max = sys.maxsize
@@ -194,6 +211,38 @@ def find_the_first_element_larger_than_x(my_arr, num):
         return False
 
 
+my_list = [-1, 2, 0, -8, -9, 1, 3, 0, 0, 5, 4, 19, 12, 15, 18, 19]
+my_list.sort()
+print("next greater occurrence", find_the_next_greater_element_in_a_sorted_list(my_list, -3))
+
+
+# my_arr is a sorted list
+def find_the_next_smaller_element_in_a_sorted_list(my_arr, num):
+    low = 0
+    high = len(my_arr) - 1
+    first_min = sys.maxsize
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if my_arr[mid] < num:
+            first_min = my_arr[mid]
+            low = mid + 1
+        elif my_arr[mid] >= num:
+            high = mid - 1
+
+    if first_min != sys.maxsize:
+        return first_min
+    else:
+        return False
+
+
+my_list = [-1, 2, 0, -8, -4, -9, 1, 3, 0, 0, 5, 4, 19, 12, 15, 18, 19]
+my_list.sort()
+print("next smaller occurrence", find_the_next_smaller_element_in_a_sorted_list(my_list, -3))
+
+
+# recursive form of binary search
 def binary_search_recursive(arr, st_in, end_i, searched_num):
 
     if st_in <= end_i:
@@ -212,41 +261,33 @@ def binary_search_recursive(arr, st_in, end_i, searched_num):
         return -1
 
 
-
-
-my_list = [0, 2, 0, -8, 1, 3, 0, 0, 5, 4, 19]
-reverse_the_list(my_list)  # after this function, changes made in the function affects my_list in the main body
-
-
-my_list = [0, 2, 5, 8, -1, 2]
-shift_arr_n_times(my_list, 2)
-
-print("My list after shifting in main body: {}".format(my_list))
-print(first_two_sum(my_list, 7))
-print(tuple_list_two_sum(my_list, 7))
-print("my list: {} smart two sum tuple list".format(my_list), smart_two_sum(my_list, 7))
-
-remove_num_occurrences_from_list(my_list, 0)
-
-replace_with_the_greatest_next(my_list)
-
-my_list = [0, 2, 0, 8, 1, -3, 0, 0, 5, 4, -11]
-
-count_num_of_occurrences(my_list)
-
-find_min_and_max_of_list(my_list)
-
-find_min_and_max_of_list_least_comparing(my_list)
-
-find_min1_min2(my_list)
-
-my_list = [1, 2, 5, 6, 9, 12]
-print("sliced : ", find_the_num_by_slicing_the_sorted_list_half(my_list,1))
-
-
-my_list = [0, 2, 0, -8, 1, 3, 0, 0, 5, 4, 19, 12]
-my_list.sort()
-print(find_the_first_element_larger_than_x(my_list, 11))
-
-my_list = [-1,0,3,5,9,12]
+my_list = [-1, 0, 3, 5, 9, 12]
 print("result of recursive search is:", binary_search_recursive(my_list, 0, len(my_list) - 1, 9))
+
+
+
+def recursive_factorial(n):
+    if n == 1:
+        return 1
+    else:
+        result = n*recursive_factorial(n-1)
+        return result
+        # return n*recursive_factorial(n-1)  # we can simply return this instead of 2 lines above
+
+
+print("Factorial of {} is {}".format(4, recursive_factorial(4)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
