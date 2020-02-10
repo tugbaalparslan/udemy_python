@@ -1,3 +1,9 @@
+# Python program to demonstrate the use of join function to join list elements with a character.
+
+list1 = ['1', '2', '3', '4']
+s = "-"
+s = s.join(list1) # joins elements of list1 by '-' and stores in string s - which is 1-2-3-4
+print(s)
 
 
 # age = input("Enter your age:")
@@ -61,8 +67,6 @@ family_females.remove('Hamza')
 print("\n\n*** CORRECT  - DONE WITH COPIED LISTS ***\n\nFemales in the family are: " + family_female.__str__() + '\n' + 'Family members are:' + str(family) + f'\nThere are {family.__len__()} people in this family')
 
 
-
-
 # print(family.index('Nesrin'))
 # friends = [
 #     ["Rolf", 24],
@@ -70,10 +74,62 @@ print("\n\n*** CORRECT  - DONE WITH COPIED LISTS ***\n\nFemales in the family ar
 #     ["Anne", 27]
 # ]
 #
-# friends_abroad = friends.copy()  # BE CAREFUL!! This modified both the copied and the non-copied list, because when we did .copy() we only copied the outermost list, and not the inner lists. Those lists still are the same list so changing one changes the other.
+# BE CAREFUL!! This modified both the copied and the non-copied list,
+# because when we did .copy() we only copied the outermost list,
+# and not the inner lists. Those lists still are the same list so changing one changes the other.
+# friends_abroad = friends.copy()
 #
 # print(friends_abroad[1][0])  # Bob
 # friends_abroad[1][0] = "Jen"
 #
 # print(friends_abroad[1][0])  # Jen
 # print(friends[1][0])  # Jen
+
+
+class User:
+    class_name = "This is class variable, not bound by an object"
+
+    def __init__(self, _id, name, passwd):
+        self.id = _id
+        self.name = name
+        self.password = passwd
+
+
+Users = [
+    User(123, "Alison", "12abd"),
+    User(124, "Raleigh", "33xyz")
+    ]
+
+new_dic = {u.id: u for u in Users}
+
+print(User.class_name)
+
+
+list_u = [2,4,6,8,10]
+
+double_nums = [x*2 for x in list_u]
+print(double_nums)
+
+
+def nested_function(n):  # arguments passed to the outer function are all accessible from inner functions
+
+    print("outer function", n)
+    x, y = 3, 5
+
+    def inner_function1():
+        print("inner function1:", n, x, y)  # Inner functions can access outer functions variables but can't change them
+        # x += 1  # you cannot change outer function's variable. they are all immutable
+    x += 1  # below this line, x will be x + 1, inner_function2 will read the new value
+
+    def inner_function2():
+        print("inner function2:", n, x, y)
+
+    inner_function1()  # In order to access the inner function, it needs to be called
+    inner_function2()
+
+
+nested_function(10)
+
+
+a = 3
+print(a<<2)

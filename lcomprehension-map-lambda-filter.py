@@ -83,3 +83,23 @@ for x in even_list:
 
 
 
+nested_list = []
+a = [1]
+b = [1, 2]
+nested_list.append(a)
+nested_list.append(b)
+print("Nested list is:", nested_list)
+
+
+def calculate_square(n):
+    return n*n
+
+
+numbers_tuple = (2, 3, 4, 5)
+numbers_list = [1, 2, 3]
+result_tuple = tuple(map(calculate_square, numbers_tuple))
+result_list = list(map(calculate_square, numbers_list))
+
+print("Result Tuple:", result_tuple, "Result List:", result_list)
+
+
